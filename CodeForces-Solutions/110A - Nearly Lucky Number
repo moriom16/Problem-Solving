@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n,count=0;
+    cin>>n;
+    int a[n];
+    //traverse all numbers, if any number is '4' or '7' then count++
+    for(int i=0; i<n; i++){
+        if(a[i]==4 || a[i]==7){
+            count++;
+        }
+    }
+   //if value of count is '4' or '7' then 'n' is a nearly lucky number
+    if(count==4 || count==7){
+        cout<<"Yes"<<endl;
+    }
+    else
+        cout<<"No"<<endl;
+}
