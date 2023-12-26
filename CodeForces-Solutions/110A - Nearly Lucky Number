@@ -1,19 +1,31 @@
-#include<iostream>
+#include<bits/stdc++.h>
+ 
 using namespace std;
 int main(){
-    int n,count=0;
+    //CORNER CASE: value can be 10^18,which is long long integer
+    long long int n;
     cin>>n;
-    int a[n];
-    //traverse all numbers, if any number is '4' or '7' then count++
-    for(int i=0; i<n; i++){
-        if(a[i]==4 || a[i]==7){
-            count++;
+
+    //CORNER CASE: convert integer input into string
+    string s;
+    s=to_string(n);
+    
+    int cnt=0;
+
+    //CORNER CASE: find length of this string using "size()" method
+    for(int i=0; i<s.size(); i++){
+ 
+        if(s[i]=='4' || s[i]=='7'){
+            cnt++;
         }
     }
-   //if value of count is '4' or '7' then 'n' is a nearly lucky number
-    if(count==4 || count==7){
-        cout<<"Yes"<<endl;
+
+    //CORNER CASE: if number of lucky number in the number is either 4 or 7 then print "YES" else "NO"
+    //MAKE SURE: YES & NO are case sensitive
+
+    if(cnt==4 || cnt==7){
+        cout<<"YES"<<endl;
     }
     else
-        cout<<"No"<<endl;
+        cout<<"NO"<<endl;
 }
