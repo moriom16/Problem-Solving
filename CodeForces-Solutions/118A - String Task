@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <ctype.h> // for tolower()
+
+using namespace std;
+
+string processString(string str) {
+    string result;
+
+    // Iterate through each character in the input string
+    for (char c : str) {
+        char lowerC = tolower(c);  // Convert to lowercase for easier comparison
+
+        // Check if vowel
+        if (lowerC == 'a' || lowerC == 'o' || lowerC == 'y' ||
+            lowerC == 'e' || lowerC == 'u' || lowerC == 'i') {
+            continue;  // Skip vowels
+        }
+
+        // Insert "." before consonant
+        result += ".";
+
+        // Add the lowercase consonant
+        result += tolower(c);
+    }
+
+    return result;
+}
+
+int main() {
+    string inputString;
+
+    // Read input string
+    getline(cin, inputString);
+
+    // Process the string
+    string processedString = processString(inputString);
+
+    // Print the result
+    cout << processedString << endl;
+
+    return 0;
+}
