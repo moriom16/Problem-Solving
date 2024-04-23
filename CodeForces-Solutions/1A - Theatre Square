@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    long long n, m, a;
+
+    // Read input
+    cin >> n >> m >> a;
+
+    // Calculate the least number of flagstones needed in each dimension
+    long long numFlagstonesX = (n + a - 1) / a; // Use integer division for ceiling effect
+    long long numFlagstonesY = (m + a - 1) / a;
+
+    // Calculate the total number of flagstones
+    long long totalFlagstones = numFlagstonesX * numFlagstonesY;
+
+    // Print the result
+    cout << totalFlagstones << endl;
+
+    return 0;
+}
